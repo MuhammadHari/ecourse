@@ -1,0 +1,36 @@
+fragment CourseFragment on Course{
+  id
+  title
+  sectionCount
+  user_id
+  category
+  description
+  caption
+  created_at
+  updated_at
+}
+fragment UserFragment on User{
+  name
+  email
+  created_at
+  updated_at
+  id
+}
+fragment SectionFragment on Section{
+  id
+  course_id
+  description
+  created_at
+  updated_at
+  title
+}
+fragment ContentFragment on Content{
+  id
+  created_at
+  updated_at
+  title
+  content_url
+  description
+  thumbnail
+  type
+}

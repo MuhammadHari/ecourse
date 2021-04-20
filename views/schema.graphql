@@ -1,0 +1,208 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Content {
+  content_url: String!
+  course_id: ID!
+  created_at: Date!
+  description: String!
+  id: ID!
+  section_id: ID
+  thumbnail: String!
+  title: String!
+  type: ContentType!
+  updated_at: Date
+}
+
+type Course {
+  caption: String!
+  category: String!
+  created_at: Date!
+  description: String!
+  id: ID!
+  image: String!
+  sectionCount: Int!
+  title: String!
+  updated_at: Date
+  user_id: Int!
+}
+
+"A paginated list of Course items."
+type CoursePaginator {
+  "A list of Course items."
+  data: [Course!]!
+  "Pagination information about the list of items."
+  paginatorInfo: PaginatorInfo!
+}
+
+type Mutation {
+  content(args: CreateContentInput!): Content
+  contentUpdate(args: UpdateContentInput!, id: ID!): Content
+  course(args: CreateCourseInput!): Course
+  courseUpdate(args: UpdateCourseInput!, id: ID!): Course
+  login(email: String!, password: String!): Boolean
+  section(args: CreateSectionInput!): Section
+  sectionDelete(id: ID!): Section!
+  sectionUpdate(args: UpdateSectionInput!, id: ID): Section!
+}
+
+"Pagination information about the corresponding list of items."
+type PageInfo {
+  "Count of nodes in current request."
+  count: Int
+  "Current page of request."
+  currentPage: Int
+  "When paginating forwards, the cursor to continue."
+  endCursor: String
+  "When paginating forwards, are there more items?"
+  hasNextPage: Boolean!
+  "When paginating backwards, are there more items?"
+  hasPreviousPage: Boolean!
+  "Last page in connection."
+  lastPage: Int
+  "When paginating backwards, the cursor to continue."
+  startCursor: String
+  "Total number of node in connection."
+  total: Int
+}
+
+"Pagination information about the corresponding list of items."
+type PaginatorInfo {
+  "Total count of available items in the page."
+  count: Int!
+  "Current pagination page."
+  currentPage: Int!
+  "Index of first item in the current page."
+  firstItem: Int
+  "If collection has more pages."
+  hasMorePages: Boolean!
+  "Index of last item in the current page."
+  lastItem: Int
+  "Last page number of the collection."
+  lastPage: Int!
+  "Number of items per page in the collection."
+  perPage: Int!
+  "Total items available in the collection."
+  total: Int!
+}
+
+type Query {
+  auth: User
+  course(id: String!): Course
+  courses(
+    "Limits number of fetched elements."
+    first: Int!,
+    "The offset from which elements are returned."
+    page: Int
+  ): CoursePaginator
+  dRedirect: String
+  gRedirect: String
+}
+
+type Section {
+  course_id: String!
+  created_at: Date!
+  description: String!
+  id: ID!
+  title: String!
+  updated_at: Date
+}
+
+type User {
+  created_at: DateTime!
+  email: String!
+  google_only: Boolean!
+  has_connect_google: Boolean!
+  id: ID!
+  is_drive_granted: Boolean!
+  name: String!
+  updated_at: DateTime!
+}
+
+enum ContentType {
+  PDF
+  VIDEO
+}
+
+"The available directions for ordering a list of records."
+enum SortOrder {
+  "Sort records in ascending order."
+  ASC
+  "Sort records in descending order."
+  DESC
+}
+
+"Specify if you want to include or exclude trashed results from a query."
+enum Trashed {
+  "Only return trashed results."
+  ONLY
+  "Return both trashed and non-trashed results."
+  WITH
+  "Only return non-trashed results."
+  WITHOUT
+}
+
+input CreateContentInput {
+  content: Upload!
+  course_id: String!
+  custom_thumbnail: Upload
+  description: String!
+  section_id: String
+  title: String!
+}
+
+input CreateCourseInput {
+  caption: String!
+  category: String!
+  description: String!
+  image: Upload!
+  title: String!
+}
+
+input CreateSectionInput {
+  course_id: String!
+  description: String!
+  title: String!
+}
+
+"Allows ordering a list of records."
+input OrderByClause {
+  "The column that is used for ordering."
+  column: String!
+  "The direction that is used for ordering."
+  order: SortOrder!
+}
+
+input UpdateContentInput {
+  caption: String
+  content: Upload
+  custom_thumbnail: Upload
+  description: String
+  title: String
+}
+
+input UpdateCourseInput {
+  caption: String
+  category: String
+  description: String
+  image: Upload
+  title: String
+}
+
+input UpdateSectionInput {
+  description: String
+  title: String
+}
+
+
+"A datetime string with format `Y-m-d H:i:s`, e.g. `2018-05-23 13:43:32`."
+scalar DateTime
+
+"A date string with format `Y-m-d`, e.g. `2011-05-23`."
+scalar Date
+
+scalar Upload

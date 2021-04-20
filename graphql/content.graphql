@@ -1,0 +1,42 @@
+enum ContentType{
+  VIDEO @enum(value: "video")
+  PDF @enum(value: "pdf")
+}
+type Content {
+  id: ID!
+  course_id: ID!
+  section_id: ID
+  title: String!
+  description: String!
+  thumbnail: String!
+  content_url: String!
+  created_at:Date!
+  updated_at:Date
+  type : ContentType!
+}
+
+input CreateContentInput {
+  course_id: String! @rules(apply: ["required", "exists:courses,id"])
+  section_id: String @rules(apply: ["sometimes", "exists:sections,id"])
+  title: String! @rules(apply: ["required"])
+  description: String! @rules(apply: ["required"])
+  content: Upload!
+  @rules(apply: ["required", "mimetypes:video/*,application/pdf"])
+  custom_thumbnail: Upload @rules(apply: ["sometimes", "mimetypes:image/*"])
+}
+input UpdateContentInput @validator {
+  title: String
+  description: String @rules(apply: ["sometimes", "exists:sections,id"])
+  content: Upload @rules(apply: ["sometimes", "mimetypes:application/pdf,video/*"])
+  custom_thumbnail: Upload @rules(apply: ["sometimes", "mimetypes:image/*"])
+  caption: String
+}
+
+extend type Mutation {
+  content(args: CreateContentInput! @spread): Content
+  @field(resolver: "App\\GraphQL\\ContentResolver@create")
+  @can(ability: "addContent", model: "Course", find: "course_id")
+  contentUpdate(id: ID! @eq, args: UpdateContentInput! @spread): Content
+  @field(resolver: "App\\GraphQL\\ContentResolver@update")
+  @can(ability: "update", model: "Content", find: "id")
+}

@@ -1,0 +1,29 @@
+type Section{
+  id: ID!
+  course_id: String!
+  title: String!
+  description: String!
+  created_at: Date!
+  updated_at: Date
+}
+
+input CreateSectionInput{
+  course_id: String! @rules(apply: ["required", "exists:courses,id"])
+  title: String!
+  description: String!
+}
+input UpdateSectionInput{
+  title: String
+  description: String
+}
+extend type Mutation {
+  section(args: CreateSectionInput! @spread): Section
+  @field(resolver: "App\\GraphQL\\SectionResolver@create")
+  @can(ability: "addSection", find: "course_id", model: "Course")
+  sectionUpdate(id: ID @eq, args: UpdateSectionInput! @spread) : Section!
+  @update
+  @can(ability: "update", find: "id", model: "Section")
+  sectionDelete(id: ID! @eq) : Section!
+  @delete
+  @can(ability: "delete", find: "id", model: "Section")
+}

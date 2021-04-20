@@ -1,0 +1,15 @@
+- course
+  - create > done
+  - update > done
+  - publish
+- section
+  - create > done
+  - update
+  - delete ( rule: must not has content first )
+- content
+  - create > done
+  - update
+  - delete
+
+
+- subscribe to course
