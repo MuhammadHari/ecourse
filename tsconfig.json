@@ -17,7 +17,7 @@
       "@pages/*": ["pages/*"],
       "@queries/*": ["queries/*"],
       "@providers/*": ["providers/*"],
-    }
+    },
   },
   "exclude": [
     "node_modules"
