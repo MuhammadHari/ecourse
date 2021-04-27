@@ -16,18 +16,14 @@ class RatingMigrator extends Migration
     Schema::create('ratings', function (Blueprint $table) {
       $table->id();
       $table->unsignedBigInteger("user_id");
-      $table->unsignedBigInteger("course_id");
+      $table->unsignedBigInteger("classroom_id");
       $table->double('value');
       $table->timestamps();
     });
-    Schema::table('ratings', function (Blueprint $table) {
-      $relations = [];
-      $relations[]=$table->foreign("user_id")->on('users');
-      $relations[]=$table->foreign("course_id")->on('courses');
-      foreach ($relations as $relation){
-        $relation->references("id");
-      }
-    });
+    \App\Shared\RelationHelper::AttachRelation("ratings", [
+      "user_id",
+      "classroom_id"
+    ]);
   }
 
   /**

@@ -16,11 +16,15 @@ class CommentMigrator extends Migration
     Schema::create('comments', function (Blueprint $table) {
       $table->id();
       $table->unsignedBigInteger("user_id");
-      $table->unsignedBigInteger("course_id")->nullable();
-      $table->unsignedBigInteger("video_id")->nullable();
+      $table->unsignedBigInteger("classroom_id")->nullable();
+      $table->unsignedBigInteger("content_id")->nullable();
       $table->text('content');
       $table->timestamps();
     });
+    $relations = [
+      "user_id", "classroom_id", "content_id"
+    ];
+    \App\Shared\RelationHelper::AttachRelation("comments",$relations);
   }
 
   /**

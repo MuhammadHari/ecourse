@@ -16,20 +16,14 @@ class DiscussionMigrator extends Migration
     Schema::create('discussions', function (Blueprint $table) {
       $table->id();
       $table->unsignedBigInteger('user_id');
-      $table->unsignedBigInteger('course_id')->nullable();
+      $table->unsignedBigInteger('classroom_id')->nullable();
       $table->unsignedBigInteger('content_id')->nullable();
       $table->text('content');
       $table->timestamps();
     });
-    Schema::table('discussions', function (Blueprint $table) {
-      $relations = [];
-      $relations[]= $table->foreign('user_id')->on("users");
-      $relations[]= $table->foreign('course_id')->on("courses");
-      $relations[]= $table->foreign('content_id')->on("contents");
-      foreach ($relations as $relation){
-        $relation->references("id");
-      }
-    });
+    \App\Shared\RelationHelper::AttachRelation("discussions", [
+      "user_id", "classroom_id", "content_id"
+    ]);
   }
 
   /**

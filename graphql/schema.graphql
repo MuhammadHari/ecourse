@@ -1,18 +1,13 @@
-"A date string with format `Y-m-d`, e.g. `2011-05-23`."
 scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
-
-"A datetime string with format `Y-m-d H:i:s`, e.g. `2018-05-23 13:43:32`."
 scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
-scalar Upload
-@scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Upload")
+scalar Upload @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Upload")
+scalar JSON @scalar(class: "MLL\\GraphQLScalars\\JSON")
+
 #import auth.graphql
-#import course.graphql
-#import section.graphql
-#import content.graphql
+#import classroom.graphql
+
 
 type Query {
-  gRedirect : String @field(resolver: "App\\GraphQL\\GoogleResolver@getRedirectUrl")
-  dRedirect : String @field(resolver: "App\\GraphQL\\GoogleResolver@getGrantDriveRedirectUrl") @guard
   auth : User @auth
 }
 
@@ -20,9 +15,6 @@ type User {
   id: ID!
   name: String!
   email: String!
-  google_only: Boolean!
   created_at: DateTime!
   updated_at: DateTime!
-  has_connect_google: Boolean!
-  is_drive_granted: Boolean!
 }

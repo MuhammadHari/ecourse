@@ -36,11 +36,8 @@ use Laravel\Sanctum\HasApiTokens;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  * @mixin \Eloquent
- * @property int $google_only
  * @method static \Illuminate\Database\Eloquent\Builder|User whereGoogleOnly($value)
- * @property-read bool $has_connect_google
- * @property-read \App\Models\GoogleCredential|null $googleCredential
- * @property-read bool $is_drive_granted
+ * @property int $google_only
  */
 class User extends Authenticatable
 {
@@ -57,19 +54,5 @@ class User extends Authenticatable
   protected $casts = [
     'email_verified_at' => 'datetime',
   ];
-
-  public function googleCredential(){
-    return $this->hasOne(GoogleCredential::class);
-  }
-
-  public function getHasConnectGoogleAttribute(): bool {
-    return (bool) $this->googleCredential()->count();
-  }
-  public function getIsDriveGrantedAttribute():bool{
-    if (! $this->has_connect_google){
-      return false;
-    }
-    return $this->googleCredential->drive_scope;
-  }
 
 }

@@ -15,7 +15,7 @@ class VideoMigrator extends Migration
   {
     Schema::create('contents', function (Blueprint $table) {
       $table->id();
-      $table->unsignedBigInteger("course_id");
+      $table->unsignedBigInteger("classroom_id");
       $table->unsignedBigInteger("section_id")->nullable();
       $table->string("title");
       $table->string("description");
@@ -23,10 +23,10 @@ class VideoMigrator extends Migration
       $table->enum('type', ["video","pdf"])->default("pdf");
       $table->timestamps();
     });
-    Schema::table('contents', function (Blueprint $table) {
-      $table->foreign("course_id")->on("courses")->references("id");
-      $table->foreign("section_id")->on("sections")->references("id");
-    });
+    \App\Shared\RelationHelper::AttachRelation("contents", [
+      "classroom_id",
+      "section_id"
+    ]);
   }
   /**
    * Reverse the migrations.

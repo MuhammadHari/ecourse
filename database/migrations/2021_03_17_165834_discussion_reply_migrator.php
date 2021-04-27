@@ -20,14 +20,9 @@ class DiscussionReplyMigrator extends Migration
       $table->text("content");
       $table->timestamps();
     });
-    Schema::table('discussion_replies', function (Blueprint $table) {
-      $relations = [];
-      $relations[] = $table->foreign("discussion_id")->on("discussions");
-      $relations[] = $table->foreign("user_id")->on('users');
-      foreach ($relations as $relation){
-        $relation->references("id");
-      }
-    });
+    \App\Shared\RelationHelper::AttachRelation("discussion_replies", [
+      "discussion_id", "user_id"
+    ]);
   }
 
   /**

@@ -16,21 +16,15 @@ class CourseProgressMigrator extends Migration
     Schema::create('course_progresses', function (Blueprint $table) {
       $table->id();
       $table->unsignedBigInteger('user_id');
-      $table->unsignedBigInteger('course_id');
+      $table->unsignedBigInteger('classroom_id');
       $table->unsignedBigInteger('content_id');
       $table->text('done_list');
       $table->boolean('completed')->default(false);
       $table->timestamps();
     });
-    Schema::table('course_progresses', function (Blueprint $table) {
-      $relations = [];
-      $relations[] = $table->foreign('user_id')->on('users');
-      $relations[] = $table->foreign('course_id')->on('courses');
-      $relations[] = $table->foreign('content_id')->on('contents');
-      foreach ($relations as $relation){
-        $relation->references("id");
-      }
-    });
+    \App\Shared\RelationHelper::AttachRelation("course_progresses", [
+      "user_id", "classroom_id", "content_id"
+    ]);
   }
 
   /**
