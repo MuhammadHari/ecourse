@@ -1,0 +1,10 @@
+.video-react {
+  background: transparent!important;
+}
+.video-react-video {
+  border-radius: 8px !important;
+}
+.video-react-control-bar{
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}

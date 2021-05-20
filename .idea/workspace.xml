@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7260d4e6-f965-4fef-bd75-78484cb0bc74" name="Default Changelist" comment="" />
+    <list default="true" id="7260d4e6-f965-4fef-bd75-78484cb0bc74" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/views/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/components/content-card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/show/content/content.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/show/content/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/show/content/item-switcher.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/show/content/media-player.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/show/content/provider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ecourse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecourse.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Content.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/content.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/content.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/application.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/views/application.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/hooks/use-paginator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/views/hooks/use-paginator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/views/loader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/models/ContentModel.base.ts" beforeDir="false" afterPath="$PROJECT_DIR$/views/models/ContentModel.base.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/models/ContentModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/views/models/ContentModel.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/models/RootStore.base.ts" beforeDir="false" afterPath="$PROJECT_DIR$/views/models/RootStore.base.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/views/models/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/show/content.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +43,7 @@
         <option value="package.json" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -211,6 +237,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/views/pages/admin/classroom" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
@@ -230,6 +257,7 @@
       <recent name="$PROJECT_DIR$/views/pages/admin/classroom" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/views/pages/admin/classroom/show/content" />
       <recent name="$PROJECT_DIR$/views/pages/admin/classroom/show" />
       <recent name="$PROJECT_DIR$/views/pages/home" />
     </key>
@@ -263,7 +291,7 @@
       <command value="artisan lighthouse:validate-schema" />
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.mst-print-model">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
@@ -310,9 +338,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.mst-print-model" />
         <item itemvalue="npm.print-schema" />
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.ui-dev" />
       </list>
     </recent_temporary>
@@ -346,7 +374,8 @@
       <workItem from="1621505709273" duration="105000" />
       <workItem from="1621505839332" duration="216000" />
       <workItem from="1621506613117" duration="11313000" />
-      <workItem from="1621518254640" duration="3023000" />
+      <workItem from="1621518254640" duration="10970000" />
+      <workItem from="1621532052258" duration="1774000" />
     </task>
     <servers />
   </component>

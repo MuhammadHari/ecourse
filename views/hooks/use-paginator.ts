@@ -39,7 +39,24 @@ function usePageHandler({
     next,
     prev,
     changePerPage,
+    prevDisabled: paginator?.currentPage === 1,
+    nextDisabled: paginator?.lastPage === paginator?.currentPage,
   };
+}
+
+export interface UsePaginator<
+  T,
+  V extends Record<string, any> = Record<string, any>
+> {
+  go(n: number): void;
+  next(): void;
+  prev(): void;
+  changePerPage(n: number): void;
+  paginator: PaginatorInfoModelType;
+  data: T[];
+  updateVars(variables: Partial<V>): void;
+  nextDisabled: boolean;
+  prevDisabled: boolean;
 }
 
 type ResRef<T> = {
@@ -83,7 +100,9 @@ export function usePaginator<
   }, [paginatorInput]);
 
   const pageHandler = usePageHandler({
-    paginator: result ? result.paginatorInfo : DefaultPaginator,
+    paginator: (result
+      ? result.paginatorInfo
+      : DefaultPaginator) as PaginatorInfoModelType,
     current: paginatorInput,
     setter: setPaginatorInput,
   });
@@ -107,14 +126,6 @@ export function usePaginator<
 
 export const PaginatorProvider =
   createContext<null | ReturnType<typeof usePaginator>>(null);
-
-export type UsePaginator<T, V> = Omit<
-  ReturnType<typeof usePaginator>,
-  "data" | "updateVars"
-> & {
-  data: Array<T>;
-  updateVars(v: Partial<V>): void;
-};
 
 export function usePaginatorContext<
   T extends Record<string, any>,

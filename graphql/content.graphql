@@ -8,9 +8,17 @@ type Content {
   sectionId: String!
   classroomId: String!
   title: String!
-  description: JSON!
+  description: String!
   sequenceNumber: Int!
   type: ContentType!
+  mediaContent: String!
+  thumbnail: String!
   createdAt: Date!
   updatedAt: Date
+
+  user: User! @with(relation: "User")
+}
+
+extend type Query {
+  contents(classroomId: ID! @where(key: "classroom_id")): [Content!]! @paginate
 }

@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { AppProvider as App } from "@providers/app-provider";
 import { SnackbarProvider } from "notistack";
 import { toJS } from "mobx";
+import "./app.css";
 
 const target = document.getElementById("root");
 

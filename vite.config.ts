@@ -15,6 +15,9 @@ export default ({ command }: any) => ({
   optimizeDeps: {
     include: ["voca", "lodash", "mobx", "mobx-state-tree"],
   },
+  esbuildOptions: {
+    keepNames: true,
+  },
   resolve: {
     alias: aliases,
   },

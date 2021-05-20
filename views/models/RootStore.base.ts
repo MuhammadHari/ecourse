@@ -17,6 +17,8 @@ import { SectionModel, SectionModelType } from "./SectionModel"
 import { sectionModelPrimitives, SectionModelSelector } from "./SectionModel.base"
 import { ContentModel, ContentModelType } from "./ContentModel"
 import { contentModelPrimitives, ContentModelSelector } from "./ContentModel.base"
+import { ContentPaginatorModel, ContentPaginatorModelType } from "./ContentPaginatorModel"
+import { contentPaginatorModelPrimitives, ContentPaginatorModelSelector } from "./ContentPaginatorModel.base"
 import { PageInfoModel, PageInfoModelType } from "./PageInfoModel"
 import { pageInfoModelPrimitives, PageInfoModelSelector } from "./PageInfoModel.base"
 
@@ -58,7 +60,8 @@ queryAuth="queryAuth",
 queryTeachers="queryTeachers",
 queryStudents="queryStudents",
 queryClassrooms="queryClassrooms",
-queryClassroom="queryClassroom"
+queryClassroom="queryClassroom",
+queryContents="queryContents"
 }
 export enum RootStoreBaseMutations {
 mutateLogin="mutateLogin",
@@ -75,7 +78,7 @@ mutateUser="mutateUser"
 */
 export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
   .named("RootStore")
-  .extend(configureStoreMixin([['User', () => UserModel], ['UserPaginator', () => UserPaginatorModel], ['PaginatorInfo', () => PaginatorInfoModel], ['ClassRoom', () => ClassRoomModel], ['Section', () => SectionModel], ['Content', () => ContentModel], ['PageInfo', () => PageInfoModel]], ['User', 'ClassRoom', 'Section', 'Content'], "js"))
+  .extend(configureStoreMixin([['User', () => UserModel], ['UserPaginator', () => UserPaginatorModel], ['PaginatorInfo', () => PaginatorInfoModel], ['ClassRoom', () => ClassRoomModel], ['Section', () => SectionModel], ['Content', () => ContentModel], ['ContentPaginator', () => ContentPaginatorModel], ['PageInfo', () => PageInfoModel]], ['User', 'ClassRoom', 'Section', 'Content'], "js"))
   .props({
     users: types.optional(types.map(types.late((): any => UserModel)), {}),
     classRooms: types.optional(types.map(types.late((): any => ClassRoomModel)), {}),
@@ -106,6 +109,11 @@ export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
     queryClassroom(variables: { id: string }, resultSelector: string | ((qb: ClassRoomModelSelector) => ClassRoomModelSelector) = classRoomModelPrimitives.toString(), options: QueryOptions = {}) {
       return self.query<{ classroom: ClassRoomModelType}>(`query classroom($id: ID!) { classroom(id: $id) {
         ${typeof resultSelector === "function" ? resultSelector(new ClassRoomModelSelector()).toString() : resultSelector}
+      } }`, variables, options)
+    },
+    queryContents(variables: { classroomId: string, first?: number, page?: number }, resultSelector: string | ((qb: ContentPaginatorModelSelector) => ContentPaginatorModelSelector) = contentPaginatorModelPrimitives.toString(), options: QueryOptions = {}) {
+      return self.query<{ contents: ContentPaginatorModelType}>(`query contents($classroomId: ID!, $first: Int, $page: Int) { contents(classroomId: $classroomId, first: $first, page: $page) {
+        ${typeof resultSelector === "function" ? resultSelector(new ContentPaginatorModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
     mutateLogin(variables: { email: string, password: string }, optimisticUpdate?: () => void) {

@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\FileAdder;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**
  * App\Models\Content
@@ -46,6 +47,21 @@ use Spatie\MediaLibrary\MediaCollections\FileAdder;
 class Content extends Model  implements HasMedia
 {
   use HasFactory, CamelCasing, InteractsWithMedia;
+
+  public $registerMediaConversionsUsingModelInstance = true;
+  public function registerMediaConversions(Media $media = null): void
+  {
+    if ($this->type === "pdf"){
+      $this->addMediaConversion('thumbnail')
+        ->pdfPageNumber(1)
+        ->performOnCollections('media');
+    }else{
+      $this->addMediaConversion('thumbnail')
+        ->extractVideoFrameAtSecond(3)
+        ->performOnCollections('media');
+    }
+  }
+
   public function registerMediaCollections(): void
   {
     $this->addMediaCollection('media')->singleFile();
@@ -86,7 +102,10 @@ class Content extends Model  implements HasMedia
   /**
    * @attribute
    */
-  public function getMediaAttribute(){
+  public function getMediaContentAttribute(){
     return $this->getFirstMediaUrl('media');
+  }
+  public function getThumbnailAttribute(){
+    return $this->getFirstMediaUrl("media", 'thumbnail');
   }
 }
