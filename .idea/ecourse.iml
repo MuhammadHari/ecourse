@@ -166,6 +166,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/mll-lab/graphql-php-scalars" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mbezhanov/faker-provider-collection" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mbezhanov/laravel-faker-provider-collection" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/xkojimedia/laravel-altair-graphql" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

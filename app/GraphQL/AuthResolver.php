@@ -4,6 +4,7 @@
 namespace App\GraphQL;
 
 
+use App\Constants\AppRole;
 use App\Models\PasswordReset;
 use App\Models\User;
 use App\Notifications\PasswordResetNotification;
@@ -68,5 +69,9 @@ class AuthResolver
     $user->save();
     $find->delete();
     return true;
+  }
+
+  public function whereRole($builder, string $role){
+    return $builder->whereRole($role);
   }
 }

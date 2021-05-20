@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a63c72f9a234070019eaf81f84dbf24",
+    "content-hash": "9a0746695ca9c752c9391808f0170505",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -7373,6 +7373,66 @@
                 }
             ],
             "time": "2021-02-05T10:51:56+00:00"
+        },
+        {
+            "name": "xkojimedia/laravel-altair-graphql",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/XKojiMedia/laravel-altair-graphql.git",
+                "reference": "6fe193b562e590bc41f4fadc679aba796b2e95b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/XKojiMedia/laravel-altair-graphql/zipball/6fe193b562e590bc41f4fadc679aba796b2e95b7",
+                "reference": "6fe193b562e590bc41f4fadc679aba796b2e95b7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6 || ^7 || ^8",
+                "illuminate/contracts": "5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6 || ^7 || ^8",
+                "illuminate/support": "5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6 || ^7 || ^8",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "laravel/lumen-framework": "5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6 || ^7",
+                "localheinz/composer-normalize": "^1.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "XKojiMedia\\AltairGraphQL\\AltairGraphQLServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "XKojiMedia\\AltairGraphQL\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samuel Imolorhe",
+                    "email": "hello@sirmuel.design"
+                }
+            ],
+            "description": "Easily integrate Altair GraphQL Client into your Laravel project",
+            "keywords": [
+                "altair-graphql",
+                "graphiql",
+                "graphql",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/XKojiMedia/laravel-altair-graphql/issues",
+                "source": "https://github.com/XKojiMedia/laravel-altair-graphql/tree/v0.2.0"
+            },
+            "time": "2021-01-28T16:54:27+00:00"
         }
     ],
     "packages-dev": [

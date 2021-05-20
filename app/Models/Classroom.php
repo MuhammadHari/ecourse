@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Constants\AppRole;
 use Eloquence\Behaviours\CamelCasing;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -39,14 +40,29 @@ use Spatie\MediaLibrary\MediaCollections\FileAdder;
  * @property int $is_publish
  * @method static \Database\Factories\ClassroomFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|Classroom whereIsPublish($value)
+ * @property-read mixed $photo
+ * @property-read mixed $section_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Section[] $sections
+ * @property-read int|null $sections_count
+ * @property-read \App\Models\User $teacher
+ * @property string $grade
+ * @method static \Illuminate\Database\Eloquent\Builder|Classroom whereGrade($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Content[] $contents
+ * @property-read int|null $contents_count
  */
 class Classroom extends Model implements HasMedia
 {
   use HasFactory,InteractsWithMedia, CamelCasing;
   protected $guarded = ['id'];
 
-  public function teacher(){
-    return $this->belongsTo(User::class, "user_id");
+  public function sections(){
+    return $this->hasMany(Section::class);
+  }
+  public function contents(){
+    return $this->hasMany(Content::class);
+  }
+  public function students(){
+    return User::whereRole(AppRole::Student)->whereGrade($this->grade);
   }
 
   public function registerMediaCollections(): void
@@ -73,6 +89,16 @@ class Classroom extends Model implements HasMedia
 
   public function getPhotoAttribute(){
     return $this->getFirstMediaUrl("photo");
+  }
+
+  public function getStudentCountAttribute(){
+    return $this->students()->count();
+  }
+  public function getSectionCountAttribute(){
+    return $this->sections()->count();
+  }
+  public function getContentCountAttribute(){
+    return $this->contents()->count();
   }
 
 }

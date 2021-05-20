@@ -1,20 +1,61 @@
 scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
-scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
-scalar Upload @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Upload")
+scalar DateTime
+  @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+scalar Upload
+  @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Upload")
 scalar JSON @scalar(class: "MLL\\GraphQLScalars\\JSON")
 
 #import auth.graphql
 #import classroom.graphql
-
+#import section.graphql
+#import content.graphql
 
 type Query {
-  auth : User @auth
+  auth: User @auth
+  teachers: [User]
+    @builder(method: "App\\GraphQL\\AuthResolver@whereRole", value: "Teacher")
+    @orderBy(column: "created_at", direction: "DESC")
+    @paginate
+  students(grade: String @where): User
+    @builder(method: "App\\GraphQL\\AuthResolver@whereRole", value: "Student")
+    @orderBy(column: "created_at", direction: "DESC")
+    @paginate
+}
+
+enum Grade {
+  HS1 @enum(value: "X")
+  HS2 @enum(value: "XI")
+  HS3 @enum(value: "XII")
+  JHS1 @enum(value: "VII")
+  JHS2 @enum(value: "VIII")
+  JHS3 @enum(value: "IX")
+  PR1 @enum(value: "IV")
+  PR2 @enum(value: "V")
+  PR3 @enum(value: "VI")
+}
+
+enum Role {
+  Adm @enum(value: "Admin")
+  Teacher @enum(value: "Teacher")
+  Student @enum(value: "Student")
 }
 
 type User {
   id: ID!
   name: String!
   email: String!
+  role: Role!
+  grade: String
   created_at: DateTime!
   updated_at: DateTime!
+}
+
+extend type Mutation {
+  user(
+    name: String! @rules(apply: ["required"])
+    email: String! @rules(apply: ["required", "email", "unique:users,email"])
+    password: String! @rules(apply: ["required"]) @hash
+    role: Role
+    grade: Grade
+  ): User! @create
 }

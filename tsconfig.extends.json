@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@root/*": ["views/*"],
+      "@components/*": ["views/components/*"],
+      "@fields/*": ["views/components/form-fields/*"],
+      "@field": ["views/components/form-fields"],
+      "@hooks/*": ["views/hooks/*"],
+      "@providers/*": ["views/providers/*"],
+      "@pages/*": ["views/pages/*"],
+      "@utils/*": ["views/utils/*"],
+      "@services/*": ["views/services/*"],
+      "@root-model": ["views/models/RootStore.base.ts"],
+      "@models/*": ["views/models/*"],
+      "@model": ["views/models"],
+      "@teacher-pages/*": ["views/pages/teacher/*"],
+      "@teacher-page": ["views/pages/teacher"],
+      "@student-pages/*": ["views/pages/student/*"],
+      "@student-page": ["views/pages/studen"],
+      "@guest-pages/*": ["views/pages/guest/*"],
+      "@guest-page": ["views/pages/guest"]
+    }
+  }
+}

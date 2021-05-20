@@ -16,16 +16,18 @@ class VideoMigrator extends Migration
     Schema::create('contents', function (Blueprint $table) {
       $table->id();
       $table->unsignedBigInteger("classroom_id");
+      $table->unsignedBigInteger("user_id");
       $table->unsignedBigInteger("section_id")->nullable();
       $table->string("title");
-      $table->string("description");
+      $table->text("description");
       $table->unsignedBigInteger('sequence_number')->default(0);
-      $table->enum('type', ["video","pdf"])->default("pdf");
+      $table->enum('type', ["video","pdf"])->default("video");
       $table->timestamps();
     });
     \App\Shared\RelationHelper::AttachRelation("contents", [
       "classroom_id",
-      "section_id"
+      "section_id",
+      "user_id"
     ]);
   }
   /**

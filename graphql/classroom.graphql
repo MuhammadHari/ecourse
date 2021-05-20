@@ -1,41 +1,15 @@
-input CreateClassRoomInput @validator{
-  title: String ! @rules(apply:["required", "string"])
-  caption: String! @rules(apply:["required", "string"])
-  category: String! @rules(apply:["required", "string"])
-  description: String! @rules(apply:["required", "string"])
-  photo: Upload! @rules(apply:["required", "image"])
-}
-input UpdateClassRoomInput @validator{
-  title: String!
-  caption: String!
-  category: String!
-  description: String!
-  published: Boolean!
-}
-type ClassRoom{
+type ClassRoom @model(class: "App\\Models\\Classroom") {
   id: ID!
-  createdAt: Date!
-  updatedAt: Date
-  title: String!
-  caption: String!
-  category: String!
-  description: String!
-  published: Boolean!
+  grade: Grade!
   photo: String!
+  sectionCount: Int! @withCount(relation: "sections")
+  studentCount: Int!
+  contentCount: Int! @withCount(relation: "contents")
+  sections: [Section!]!
+  contents: [Content!]!
 }
 
-extend type Mutation {
-  classroom(
-    title: String ! @rules(apply:["required", "string"])
-    caption: String! @rules(apply:["required", "string"])
-    category: String! @rules(apply:["required", "string"])
-    description: String! @rules(apply:["required", "string"])
-    photo: Upload! @rules(apply:["required", "image"])
-  ) : ClassRoom @validator(class: "App\\GraphQL\\Validators\\CreateClassRoomInputValidator")
-  @inject(context: "user.id", name:"user_id")
-  @field(resolver: "App\\GraphQL\\ClassRoomResolver@create")
-}
-
-extend type Query{
-  teacherClassroom : [ClassRoom!]! @all(model:"App\\Models\\Classroom") @whereAuth(relation: "teacher")
+extend type Query {
+  classrooms: [ClassRoom] @all
+  classroom(id: ID! @eq): ClassRoom! @find
 }

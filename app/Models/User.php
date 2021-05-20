@@ -38,6 +38,10 @@ use Laravel\Sanctum\HasApiTokens;
  * @mixin \Eloquent
  * @method static \Illuminate\Database\Eloquent\Builder|User whereGoogleOnly($value)
  * @property int $google_only
+ * @property string|null $grade
+ * @property string $role
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereGrade($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereRole($value)
  */
 class User extends Authenticatable
 {

@@ -22,6 +22,9 @@ class ClassRoomResolver extends GraphqlResolver
 
   public function makeModel(): Model
   {
+    if (isset($this->modelArguments['id'])){
+      return Classroom::find($this->modelArguments['id']);
+    }
     return Classroom::create($this->modelArguments);
   }
 
@@ -30,6 +33,12 @@ class ClassRoomResolver extends GraphqlResolver
     $this
       ->model
       ->addPhoto($this->additionalArguments['photo']);
+  }
+  protected function afterUpdate()
+  {
+    if (isset($this->additionalArguments['photo'])){
+      $this->afterCreate();
+    }
   }
 
   public function getTeacherClassroom($builder){

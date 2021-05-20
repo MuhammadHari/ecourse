@@ -1,5 +1,7 @@
 <?php
 
+use App\Constants\UserGrade;
+use App\Shared\RelationHelper;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,15 +17,9 @@ class ClassRoomMigrator extends Migration
   {
     Schema::create('classrooms', function (Blueprint $table) {
       $table->id();
-      $table->unsignedBigInteger('user_id');
-      $table->string("title");
-      $table->text("caption");
-      $table->string("category");
-      $table->text('description');
-      $table->boolean("is_publish")->default(false);
+      $table->enum("grade", UserGrade::list());
       $table->timestamps();
     });
-    \App\Shared\RelationHelper::AttachRelation("classrooms", ["user_id"]);
   }
 
   /**

@@ -1,5 +1,7 @@
 <?php
 
+use App\Constants\AppRole;
+use App\Constants\UserGrade;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,7 +21,8 @@ class CreateUsersTable extends Migration
       $table->string('email')->unique();
       $table->timestamp('email_verified_at')->nullable();
       $table->string('password');
-      $table->boolean('google_only')->default(true);
+      $table->enum("grade", [...UserGrade::list(), null])->nullable();
+      $table->enum("role", AppRole::LIST)->default(AppRole::Student);
       $table->rememberToken();
       $table->timestamps();
     });

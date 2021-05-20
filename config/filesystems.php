@@ -41,6 +41,10 @@ return [
       'url' => env('APP_URL').'/storage',
       'visibility' => 'public',
     ],
+    'dev-only' => [
+      'driver' => 'local',
+      'root' => storage_path('app/assets'),
+    ],
     "google"=>[
       "driver"=>'google'
     ],

@@ -162,6 +162,7 @@
       <path value="$PROJECT_DIR$/vendor/mll-lab/graphql-php-scalars" />
       <path value="$PROJECT_DIR$/vendor/mbezhanov/faker-provider-collection" />
       <path value="$PROJECT_DIR$/vendor/mbezhanov/laravel-faker-provider-collection" />
+      <path value="$PROJECT_DIR$/vendor/xkojimedia/laravel-altair-graphql" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />

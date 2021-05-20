@@ -32,12 +32,10 @@ return [
      */
     'middleware' => [
       \Nuwave\Lighthouse\Support\Http\Middleware\AcceptJson::class,
-      \Nuwave\Lighthouse\Support\Http\Middleware\AttemptAuthentication::class,
+//      \Nuwave\Lighthouse\Support\Http\Middleware\AttemptAuthentication::class,
       \App\Http\Middleware\EncryptCookies::class,
       \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
       \Illuminate\Session\Middleware\StartSession::class,
-      RegisterDriveFileSystem::class
-
     ],
 
     /*
@@ -58,7 +56,7 @@ return [
   |
   */
 
-  'guard' => 'sanctum',
+  'guard' => 'web',
 
   /*
   |--------------------------------------------------------------------------
@@ -161,7 +159,7 @@ return [
      * Allow clients to query paginated lists without specifying the amount of items.
      * Setting this to `null` means clients have to explicitly ask for the count.
      */
-    'default_count' => null,
+    'default_count' => 20,
 
     /*
      * Limit the maximum amount of items that clients can request from paginated lists.
