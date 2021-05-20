@@ -1,105 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7260d4e6-f965-4fef-bd75-78484cb0bc74" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Constants/AppRole.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Constants/UserGrade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/SectionResolver.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/view.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/app.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/application.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/components/classroom-page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/components/form-fields/grade-field.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/components/form-fields/photo-field.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/hooks/use-breakpoint.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/hooks/use-paginator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layout/account-navigator.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layout/layout-provider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layout/navigator/admin.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layout/navigator/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layout/navigator/list-renderer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layout/navigator/student.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layout/navigator/teacher.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layout/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layout/teacher-nav.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/loader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/classroom-card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/list.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/show/content.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/show/general.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/show/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/show/navigator.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/show/provider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/show/show.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/show/student.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/classroom/show/type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/routes.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/shared/user-data-table.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/shared/user-form.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/student.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/admin/teacher.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/guest/home/home.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/guest/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/guest/login/sign-in.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/guest/register/sign-up.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/guest/routes.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/guest/shared/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/student/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/student/student-page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/teacher/classroom/classroom-card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/teacher/classroom/classroom-form.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/teacher/classroom/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/teacher/classroom/list.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/teacher/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/teacher/routes.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/teacher/section/create.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/teacher/section/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/teacher/section/list.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/teacher/section/section-batch-updater.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/teacher/section/type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/teacher/section/update.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/providers/app-provider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/services/auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/services/classroom.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/services/sections.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/services/user.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/utils/grade-tranform.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/utils/mutation-service-factory.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/utils/transform-gql-key.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ecourse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecourse.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Development.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Development.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/AuthResolver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/AuthResolver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/ClassRoomResolver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/ClassRoomResolver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Classroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Classroom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Shared/GraphqlResolver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Shared/GraphqlResolver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/lighthouse.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/lighthouse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ClassroomFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ClassroomFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_17_163705_classroom_migrator.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_17_163705_classroom_migrator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_17_164415_section_migrator.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_17_164415_section_migrator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_17_164416_video_migrator.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_17_164416_video_migrator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_17_164624_comment_migrator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_17_165421_rating_migrator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/classroom.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/classroom.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/content.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/content.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/section.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/section.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="7260d4e6-f965-4fef-bd75-78484cb0bc74" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -444,7 +346,7 @@
       <workItem from="1621505709273" duration="105000" />
       <workItem from="1621505839332" duration="216000" />
       <workItem from="1621506613117" duration="11313000" />
-      <workItem from="1621518254640" duration="2345000" />
+      <workItem from="1621518254640" duration="3023000" />
     </task>
     <servers />
   </component>

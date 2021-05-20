@@ -77,16 +77,7 @@ const UserAppbar = ({ onDrawerToggle }: HeaderProps) => {
                 {pageTitle}
               </Typography>
             </Grid>
-            <Grid item>
-              <Button
-                className={classes.button}
-                variant="outlined"
-                color="inherit"
-                size="small"
-              >
-                Web setup
-              </Button>
-            </Grid>
+            <Grid item></Grid>
             <Grid item>
               <Tooltip title="Help">
                 <IconButton color="inherit">
