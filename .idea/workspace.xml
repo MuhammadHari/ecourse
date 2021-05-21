@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7260d4e6-f965-4fef-bd75-78484cb0bc74" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/views/providers/app-provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/views/providers/app-provider.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="7260d4e6-f965-4fef-bd75-78484cb0bc74" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -214,7 +212,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bisindo" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -365,7 +363,7 @@
       <workItem from="1621506613117" duration="11313000" />
       <workItem from="1621518254640" duration="10970000" />
       <workItem from="1621532052258" duration="6977000" />
-      <workItem from="1621557236946" duration="269000" />
+      <workItem from="1621557236946" duration="744000" />
     </task>
     <servers />
   </component>

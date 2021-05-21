@@ -8,4 +8,5 @@ Route::get('/google/callback', [GoogleAuthController::class, 'callback']);
 Route::view('/{path?}', 'view')
   ->where('path', '.*')
   ->where('path', '^((?!vendor).)*$')
+  ->where('path', '^((?!storage).)*$')
   ->name('react');
