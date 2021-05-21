@@ -1,5 +1,8 @@
+// @ts-ignore
 import path from "path";
+// @ts-ignore
 import tsConfig from "./tsconfig.extends.json";
+// @ts-ignore
 import voca from "voca";
 
 const paths = tsConfig.compilerOptions.paths as Record<string, Array<string>>;

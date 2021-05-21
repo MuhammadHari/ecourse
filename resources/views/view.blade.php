@@ -6,11 +6,13 @@
   <title>
     {{env("APP_NAME")}}
   </title>
-  <link rel="stylesheet" href="{{mix("css/app.css")}}">
+{{--  <link rel="stylesheet" href="/build/assets/js/app.js">--}}
 </head>
 <body>
 <main id="root"></main>
-@if(env("APP_DEBUG"))
+@if(env("MIX_BUILD", true))
+  <script src="{{mix("js/app.js")}}"></script>
+@else
   <script>
     var global = window;
   </script>
