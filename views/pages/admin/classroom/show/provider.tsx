@@ -6,6 +6,7 @@ import { Navigator } from "./navigator";
 import { ShowContext, Path } from "./type";
 import { useLayout } from "@root/layout/layout-provider";
 import { observer } from "mobx-react";
+import { gradeUtils } from "@utils/grade-tranform";
 
 const useFetch = classroomServices.queryClassroom;
 
@@ -23,7 +24,9 @@ export const Provider = observer(({ children }: any) => {
 
   React.useEffect(() => {
     if (classroom) {
-      updateTitle("Menagemen ruang kelas " + classroom.gradeLabel);
+      updateTitle(
+        "Menagemen ruang kelas " + gradeUtils.find(classroom.grade).label
+      );
     }
   }, [classroom]);
 
