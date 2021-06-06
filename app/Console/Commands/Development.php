@@ -129,30 +129,30 @@ class Development extends Command
 
   public function handle()
   {
-//    $this->info("check deps");
-//    exec("rm -r ". base_path("storage/app/public/**"));
-//    $this->checkDeps();
-//    \Artisan::call("migrate:fresh");
-//    $this->adminUser = User::factory()->create([
-//      "email"=>env("ADMIN_EMAIL", "teacher@laravel.com"),
-//      "role"=>"Admin",
-//      "grade"=>null
-//    ]);
-//    $this->info("admin created");
-//    $this->info("create users");
-//    UserGrade::callback(function (string $grade, int $index){
-//      User::factory()->create([
-//        "role"=>"teacher",
-//        "email"=>"teacher".($index+ 1)."@app.com",
-//      ]);
-//      User::factory()->count($this->faker->numberBetween(20,30))->create([
-//        "role"=>"student",
-//        "grade"=>$grade
-//      ]);
-//    });
-//    $this->makeClassrooms();
-//    $this->makeSection();
-//    $this->makeProgress();
+    $this->info("check deps");
+    exec("rm -r ". base_path("storage/app/public/**"));
+    $this->checkDeps();
+    \Artisan::call("migrate:fresh");
+    $this->adminUser = User::factory()->create([
+      "email"=>env("ADMIN_EMAIL", "teacher@laravel.com"),
+      "role"=>"Admin",
+      "grade"=>null
+    ]);
+    $this->info("admin created");
+    $this->info("create users");
+    UserGrade::callback(function (string $grade, int $index){
+      User::factory()->create([
+        "role"=>"teacher",
+        "email"=>"teacher".($index+ 1)."@app.com",
+      ]);
+      User::factory()->count($this->faker->numberBetween(20,30))->create([
+        "role"=>"student",
+        "grade"=>$grade
+      ]);
+    });
+    $this->makeClassrooms();
+    $this->makeSection();
+    $this->makeProgress();
     return 0;
   }
 }
