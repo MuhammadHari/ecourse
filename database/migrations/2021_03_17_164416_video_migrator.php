@@ -22,6 +22,7 @@ class VideoMigrator extends Migration
       $table->text("description");
       $table->unsignedBigInteger('sequence_number')->default(0);
       $table->enum('type', ["video","pdf"])->default("video");
+      $table->json("meta_data");
       $table->timestamps();
     });
     \App\Shared\RelationHelper::AttachRelation("contents", [

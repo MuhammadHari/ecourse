@@ -19,6 +19,7 @@ class DiscussionReplyMigrator extends Migration
       $table->unsignedBigInteger("user_id");
       $table->text("content");
       $table->timestamps();
+      $table->softDeletes();
     });
     \App\Shared\RelationHelper::AttachRelation("discussion_replies", [
       "discussion_id", "user_id"

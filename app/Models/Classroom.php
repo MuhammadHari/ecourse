@@ -6,9 +6,11 @@ use App\Constants\AppRole;
 use Eloquence\Behaviours\CamelCasing;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\FileAdder;
+use App\Script\MediaUrlHelper;
 
 /**
  * App\Models\Classroom
@@ -49,6 +51,8 @@ use Spatie\MediaLibrary\MediaCollections\FileAdder;
  * @method static \Illuminate\Database\Eloquent\Builder|Classroom whereGrade($value)
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Content[] $contents
  * @property-read int|null $contents_count
+ * @property-read mixed $content_count
+ * @property-read mixed $student_count
  */
 class Classroom extends Model implements HasMedia
 {
@@ -56,7 +60,7 @@ class Classroom extends Model implements HasMedia
   protected $guarded = ['id'];
 
   public function sections(){
-    return $this->hasMany(Section::class);
+    return $this->hasMany(Section::class)->orderBy("title", "ASC");
   }
   public function contents(){
     return $this->hasMany(Content::class);
@@ -88,7 +92,7 @@ class Classroom extends Model implements HasMedia
   }
 
   public function getPhotoAttribute(){
-    return $this->getFirstMediaUrl("photo");
+    return MediaUrlHelper::parseUrl($this->getFirstMediaUrl("photo"));
   }
 
   public function getStudentCountAttribute(){

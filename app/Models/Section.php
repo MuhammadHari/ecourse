@@ -26,6 +26,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Section whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Section whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \App\Models\Classroom $classroom
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Content[] $contents
+ * @property-read int|null $contents_count
+ * @property-read mixed $content_count
  */
 class Section extends Model
 {
@@ -38,6 +42,10 @@ class Section extends Model
   }
   public function classroom(){
     return $this->belongsTo(Classroom::class);
+  }
+
+  public function getContentCountAttribute(){
+    return $this->contents()->count();
   }
 
 }

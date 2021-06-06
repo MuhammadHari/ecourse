@@ -9,6 +9,8 @@ scalar JSON @scalar(class: "MLL\\GraphQLScalars\\JSON")
 #import classroom.graphql
 #import section.graphql
 #import content.graphql
+#import discussion.graphql
+#import progress.graphql
 
 type Query {
   auth: User @auth

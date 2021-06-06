@@ -23,6 +23,15 @@ class AuthResolver
     }
     return false;
   }
+  public function logout($_, array $args) : bool {
+    $credential = \Arr::except($args, ['directive']);
+    $guard = auth()->guard();
+    if ($guard->user()){
+      $guard->logout();
+      return true;
+    }
+    return false;
+  }
 
   public function register($_, array $args) : bool {
     $inputs = \Arr::except($args, ['password_confirmation', 'directive']);

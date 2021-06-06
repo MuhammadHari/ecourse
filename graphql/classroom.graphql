@@ -12,4 +12,7 @@ type ClassRoom @model(class: "App\\Models\\Classroom") {
 extend type Query {
   classrooms: [ClassRoom] @all
   classroom(id: ID! @eq): ClassRoom! @find
+  classroomByUser: ClassRoom!
+    @builder(method: "App\\GraphQL\\ClassroomResolver@getStudentClassroom")
+    @first
 }

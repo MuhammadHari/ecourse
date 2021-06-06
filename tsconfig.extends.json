@@ -11,6 +11,7 @@
       "@pages/*": ["views/pages/*"],
       "@utils/*": ["views/utils/*"],
       "@services/*": ["views/services/*"],
+      "@service-provider/*": ["views/providers/service-provider/*"],
       "@root-model": ["views/models/RootStore.base.ts"],
       "@models/*": ["views/models/*"],
       "@model": ["views/models"],

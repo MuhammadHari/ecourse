@@ -22,4 +22,6 @@ type Mutation {
   @field(resolver: "App\\GraphQL\\AuthResolver@register")
   login(email:String! @rules(apply: ["email","exists:users,email"]), password:String!) : Boolean!
   @field(resolver: "App\\GraphQL\\AuthResolver@login")
+  logout : Boolean!
+  @field(resolver: "App\\GraphQL\\AuthResolver@logout")
 }

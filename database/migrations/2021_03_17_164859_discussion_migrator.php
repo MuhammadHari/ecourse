@@ -16,13 +16,14 @@ class DiscussionMigrator extends Migration
     Schema::create('discussions', function (Blueprint $table) {
       $table->id();
       $table->unsignedBigInteger('user_id');
-      $table->unsignedBigInteger('classroom_id')->nullable();
       $table->unsignedBigInteger('content_id')->nullable();
+      $table->text('title');
       $table->text('content');
       $table->timestamps();
+      $table->softDeletes();
     });
     \App\Shared\RelationHelper::AttachRelation("discussions", [
-      "user_id", "classroom_id", "content_id"
+      "user_id", "content_id"
     ]);
   }
 

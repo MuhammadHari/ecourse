@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Script\ContentMetaData;
+use App\Script\MediaUrlHelper;
 use Eloquence\Behaviours\CamelCasing;
 use GuzzleHttp\Psr7\UploadedFile;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -43,10 +45,21 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  * @method static \Illuminate\Database\Eloquent\Builder|Content whereType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Content whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $user_id
+ * @property-read mixed $media_content
+ * @property-read mixed $thumbnail
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|Content whereUserId($value)
+ * @property mixed $meta_data
+ * @method static \Illuminate\Database\Eloquent\Builder|Content whereMetaData($value)
+ * @property-read mixed $duration
+ * @property-read mixed $page_number
  */
 class Content extends Model  implements HasMedia
 {
   use HasFactory, CamelCasing, InteractsWithMedia;
+
+  protected $guarded = ["id"];
 
   public $registerMediaConversionsUsingModelInstance = true;
   public function registerMediaConversions(Media $media = null): void
@@ -60,6 +73,10 @@ class Content extends Model  implements HasMedia
         ->extractVideoFrameAtSecond(3)
         ->performOnCollections('media');
     }
+  }
+
+  public function user(){
+    return $this->belongsTo(User::class);
   }
 
   public function registerMediaCollections(): void
@@ -96,16 +113,19 @@ class Content extends Model  implements HasMedia
   public function section(){
     return $this->belongsTo(Section::class);
   }
-  public function user(){
-    return $this->belongsTo(User::class);
-  }
   /**
    * @attribute
    */
   public function getMediaContentAttribute(){
-    return $this->getFirstMediaUrl('media');
+    return route("stream", ['id'=>$this->id]);
   }
   public function getThumbnailAttribute(){
-    return $this->getFirstMediaUrl("media", 'thumbnail');
+    return MediaUrlHelper::parseUrl($this->getFirstMediaUrl('media', "thumbnail"));
+  }
+  public function getPageNumberAttribute(){
+    return ContentMetaData::getValue($this, "pageTotal", 0);
+  }
+  public function getDurationAttribute(){
+    return ContentMetaData::getValue($this, "duration", 0);
   }
 }

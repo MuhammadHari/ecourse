@@ -1,5 +1,12 @@
 <?php
 
+$getUrl = function (){
+  if (env("MIX_BUILD", true)) {
+    return env("APP_URL")."/storage";
+  }
+  return "http://localhost:8000/storage";
+};
+
 return [
 
   /*
@@ -38,7 +45,7 @@ return [
     'public' => [
       'driver' => 'local',
       'root' => storage_path('app/public'),
-      'url' => env('APP_URL').'/storage',
+      'url' => $getUrl(),
       'visibility' => 'public',
     ],
     'dev-only' => [

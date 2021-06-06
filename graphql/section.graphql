@@ -1,23 +1,29 @@
 type Section {
   id: ID!
   classroomId: String!
+  classroom: ClassRoom!
   title: String!
-  sequence: Int!
+  contents: [Content!]! @orderBy(column: "title", direction: ASC)
+  contentCount: Int!
   createdAt: Date!
   updatedAt: Date
-}
-input SectionBatchMapInput {
-  id: ID @rules(apply: ["required", "exists:sections,id"])
-  sequence: Int @rules(apply: ["required", "min:1"])
 }
 extend type Mutation {
   sections(
     classroomId: ID! @rules(apply: ["required", "exists:classrooms,id"])
     title: String! @rules(apply: ["required"])
-    sequence: Int! @rules(apply: ["required", "numeric", "min:1"])
   ): Section @create
-  sectionBatchUpdate(
-    classroomId: ID! @rules(apply: ["required"])
-    map: [SectionBatchMapInput!]!
-  ): [Section!]! @field(resolver: "App\\GraphQL\\SectionResolver@updateBatch")
+  sectionUpdate(
+    id: ID! @eq @rules(apply: ["exists:sections,id"])
+    title: String! @rules(apply: ["required"])
+  ): Section @update
+}
+extend type Query {
+  sections: [Section!]! @all
+  sectionByClassroom(
+    id: ID!
+      @rules(apply: ["exists:classrooms,id"])
+      @where(key: "classroom_id", operator: "=")
+  ): [Section!]! @all @orderBy(column: "title", direction: "ASC")
+  section(id: ID @eq): Section @find
 }

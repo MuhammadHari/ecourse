@@ -1,0 +1,47 @@
+type Discussion {
+  id: ID!
+  user: User!
+  title: String!
+  content: String!
+  replyCount: Int!
+  created_at: DateTime!
+  updated_at: Date
+}
+type DiscussionReply {
+  id: ID!
+  user: User!
+  content: String!
+  created_at: DateTime!
+  updated_at: Date
+}
+
+extend type Query {
+  discussion(id: ID! @where(key: "content_id")): [Discussion!]!
+    @orderBy(column: "created_at", direction: DESC)
+    @paginate
+  discussionReplies(id: ID! @where(key: "discussion_id")): [DiscussionReply]
+    @orderBy(column: "created_at", direction: DESC)
+    @paginate
+}
+extend type Mutation {
+  discussion(
+    content_id: ID! @rules(apply: ["exists:contents,id"])
+    content: String! @rules(apply: ["required"])
+    title: String! @rules(apply: ["required"])
+  ): Discussion @create @inject(context: "user.id", name: "user_id") @guard
+  discussionUpdate(
+    id: ID! @eq @rules(apply: ["exists:discussions,id"])
+    content: String! @rules(apply: ["required"])
+    title: String! @rules(apply: ["required"])
+  ): Discussion @update
+  discussionDelete(id: ID! @eq): Discussion @delete
+  discussionReplyDelete(id: ID! @eq): DiscussionReply @delete
+  discussionReply(
+    discussion_id: ID! @rules(apply: ["exists:discussions,id"])
+    content: String! @rules(apply: ["required"])
+  ): DiscussionReply @create @inject(context: "user.id", name: "user_id") @guard
+  discussionReplyUpdate(
+    id: ID! @eq @rules(apply: ["exists:discussion_replies,id"])
+    content: String! @rules(apply: ["required"])
+  ): DiscussionReply @update
+}

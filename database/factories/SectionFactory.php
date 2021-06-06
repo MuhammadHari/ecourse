@@ -23,7 +23,6 @@ class SectionFactory extends Factory
   {
     return [
       "title"=>$this->faker->secondarySchool,
-      "sequence"=>$this->faker->numberBetween(1,100)
     ];
   }
 }

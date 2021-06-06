@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Content;
+use App\Script\ContentMetaData;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
@@ -17,15 +18,37 @@ class ContentFactory extends Factory
    */
   protected $model = Content::class;
 
+  public function getFile(bool $ispdf){
+
+    $disk = Storage::disk('dev-only');
+    $files =collect($disk->allFiles("/videos"));
+    if ($ispdf){
+      return $files->first(function ($path){
+        $ext = Str::afterLast($path,".");
+        return $ext === "pdf";
+      });
+    }
+    $filter = $files->filter(function ($path){
+      $ext = Str::afterLast($path,".");
+      return $ext !== "pdf";
+    });
+    return $this->faker->randomElement($filter->toArray());
+  }
+
   public function configure()
   {
     $disk = Storage::disk('dev-only');
-    $files = $disk->allFiles("/videos");
-    return $this->afterCreating(function (Content $content) use ($disk, $files) {
-      $file = $this->faker->randomElement($files);
+    return $this->afterCreating(function (Content $content) use ($disk) {
+      $file = $this->getFile($this->faker->boolean(60));
       $type = Str::afterLast($file, '.');
       $name = "content-". $content->id.".$type";
-      $content->addContent(UploadedFile::fake()->create($name,$disk->get($file)));
+      $content->addContent(UploadedFile::fake()->create($name,$disk->get(
+        $file
+      )));
+      $content->refresh();
+      $metadata = ContentMetaData::make($content->getFirstMedia("media"));
+      $content->meta_data = json_encode($metadata);
+      $content->save();
     });
   }
   public function definition()
@@ -33,7 +56,8 @@ class ContentFactory extends Factory
     return [
       "title"=>$this->faker->course,
       "description"=>Storage::disk()->get("course-desc.json"),
-      "sequence_number"=>$this->faker->numberBetween(1,10)
+      "sequence_number"=>$this->faker->numberBetween(1,10),
+      "meta_data"=>"{}"
     ];
   }
 }

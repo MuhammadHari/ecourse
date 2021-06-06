@@ -1,0 +1,31 @@
+type Progress {
+  id: ID!
+  section_id: String!
+  content_id: String!
+  status: Float!
+  content: Content!
+  played: Float!
+  created_at: DateTime!
+  updated_at: DateTime
+}
+
+type SectionProgress{
+  section_id: ID
+  progress: Float
+}
+
+type StudentClassroom {
+  id: ID!
+  userId: String
+  classroomId: String
+  classroom: ClassRoom
+  user: User
+  sectionProgress: [SectionProgress!]! @method(name: "getSectionProgressAttribute")
+}
+
+extend type Query {
+  progress: [Progress] @all
+  studentClassroom(classroom_id: String): StudentClassroom
+    @builder(method: "App\\GraphQL\\StudentClassroomResolver@builder")
+    @first
+}

@@ -17,7 +17,6 @@ class SectionMigrator extends Migration
       $table->id();
       $table->unsignedBigInteger("classroom_id");
       $table->string("title");
-      $table->integer("sequence");
       $table->timestamps();
     });
     \App\Shared\RelationHelper::AttachRelation("sections", ["classroom_id"]);

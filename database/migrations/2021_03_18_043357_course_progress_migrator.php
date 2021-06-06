@@ -13,17 +13,17 @@ class CourseProgressMigrator extends Migration
    */
   public function up()
   {
-    Schema::create('course_progresses', function (Blueprint $table) {
+    Schema::create('student_progresses', function (Blueprint $table) {
       $table->id();
       $table->unsignedBigInteger('user_id');
-      $table->unsignedBigInteger('classroom_id');
+      $table->unsignedBigInteger('section_id');
       $table->unsignedBigInteger('content_id');
-      $table->text('done_list');
+      $table->unsignedBigInteger("played")->default(0);
       $table->boolean('completed')->default(false);
       $table->timestamps();
     });
-    \App\Shared\RelationHelper::AttachRelation("course_progresses", [
-      "user_id", "classroom_id", "content_id"
+    \App\Shared\RelationHelper::AttachRelation("student_progresses", [
+      "user_id", "section_id", "content_id"
     ]);
   }
 

@@ -9,16 +9,37 @@ type Content {
   classroomId: String!
   title: String!
   description: String!
-  sequenceNumber: Int!
   type: ContentType!
+  duration: Float!
+  pageNumber: Float!
   mediaContent: String!
   thumbnail: String!
   createdAt: Date!
   updatedAt: Date
-
   user: User! @with(relation: "User")
+  section: Section @with(relation: "Section")
+  classroom: ClassRoom @with(relation: "Section")
+}
+
+extend type Mutation {
+  content(
+    section_id: String! @rules(apply: ["required", "exists:sections,id"])
+    classroom_id: String! @rules(apply: ["required", "exists:classrooms,id"])
+    title: String! @rules(apply: ["required"])
+    description: String! @rules(apply: ["required"])
+    content: Upload!
+      @rules(apply: ["required", "file", "mimetypes:application/pdf,video/*"])
+  ): Content!
+    @field(resolver: "App\\GraphQL\\ContentResolver@create")
+    @inject(name: "user_id", context: "user.id")
+    @guard
 }
 
 extend type Query {
-  contents(classroomId: ID! @where(key: "classroom_id")): [Content!]! @paginate
+  contents(
+    classroomId: ID! @where(key: "classroom_id")
+    sectionId: ID @where(key: "section_id")
+  ): [Content!]! @orderBy(column: "created_at", direction: DESC) @paginate
+  contentByUser: [Content!]! @whereAuth(relation: "user") @paginate
+  contentBySection(id: String! @where(key: "section_id")): [Content!]! @all
 }

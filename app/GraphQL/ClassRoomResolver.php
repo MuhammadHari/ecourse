@@ -45,4 +45,8 @@ class ClassRoomResolver extends GraphqlResolver
     $id = auth()->id();
     return $builder->whereUserId($id)->orderByDesc("created_at");
   }
+  public function getStudentClassroom($builder){
+    $user = auth()->user();
+    return $builder->whereGrade($user->grade);
+  }
 }
