@@ -1,27 +1,34 @@
-input CreateUserInput{
-  email: String! @rules(apply: ["required","email","unique:users,email"])
-  password: String! @rules(apply: ["required","confirmed","string", "min:6"])
-  password_confirmation: String! @rules(apply:["required"])
-  name: String! @rules(apply:["required"])
+input CreateUserInput {
+  email: String! @rules(apply: ["required", "email", "unique:users,email"])
+  password: String! @rules(apply: ["required", "confirmed", "string", "min:6"])
+  password_confirmation: String! @rules(apply: ["required"])
+  name: String! @rules(apply: ["required"])
 }
 
 type Mutation {
-  login(email: String!, password: String!) : Boolean
-  @field(resolver: "App\\GraphQL\\AuthResolver@login")
-  resetPassword(email: String! @rules(
-    apply: ["email", "exists:users,email"])) : Boolean!
-  @field(resolver: "App\\GraphQL\\AuthResolver@resetPassword")
+  authUpdate(
+    name: String
+    email: String
+    password: String
+    password_confirmation: String
+    avatar: Upload
+  ): User @field(resolver: "App\\GraphQL\\UserResolver@update")
+  resetPassword(
+    email: String! @rules(apply: ["email", "exists:users,email"])
+  ): Boolean! @field(resolver: "App\\GraphQL\\AuthResolver@resetPassword")
   resetPasswordCallback(
-    email: String! @rules(apply: ["email", "exists:users,email"]),
+    email: String! @rules(apply: ["email", "exists:users,email"])
     code: String! @rules(apply: ["required", "exists:password_resets,token"])
-    password: String! @rules(apply: ["required", "confirmed", "string", "min:6"])
-    password_confirmation : String! @rules(apply: ["required"])
-  ) : Boolean!,
-  @field(resolver: "App\\GraphQL\\AuthResolver@passwordResetCallback")
-  register(args: CreateUserInput ! @spread) : Boolean!
-  @field(resolver: "App\\GraphQL\\AuthResolver@register")
-  login(email:String! @rules(apply: ["email","exists:users,email"]), password:String!) : Boolean!
-  @field(resolver: "App\\GraphQL\\AuthResolver@login")
-  logout : Boolean!
-  @field(resolver: "App\\GraphQL\\AuthResolver@logout")
+    password: String!
+      @rules(apply: ["required", "confirmed", "string", "min:6"])
+    password_confirmation: String! @rules(apply: ["required"])
+  ): Boolean!
+    @field(resolver: "App\\GraphQL\\AuthResolver@passwordResetCallback")
+  register(args: CreateUserInput! @spread): Boolean!
+    @field(resolver: "App\\GraphQL\\AuthResolver@register")
+  login(
+    email: String! @rules(apply: ["email", "exists:users,email"])
+    password: String!
+  ): Boolean! @field(resolver: "App\\GraphQL\\AuthResolver@login")
+  logout: Boolean! @field(resolver: "App\\GraphQL\\AuthResolver@logout")
 }

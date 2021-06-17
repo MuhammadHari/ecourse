@@ -145,14 +145,10 @@ class Development extends Command
         "role"=>"teacher",
         "email"=>"teacher".($index+ 1)."@app.com",
       ]);
-      User::factory()->count($this->faker->numberBetween(20,30))->create([
-        "role"=>"student",
-        "grade"=>$grade
-      ]);
     });
     $this->makeClassrooms();
-    $this->makeSection();
-    $this->makeProgress();
+//    $this->makeSection();
+//    $this->makeProgress();
     return 0;
   }
 }

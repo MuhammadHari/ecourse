@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 /**
  * App\Models\User
@@ -43,9 +45,13 @@ use Laravel\Sanctum\HasApiTokens;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereGrade($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRole($value)
  */
-class User extends Authenticatable
+class User extends Authenticatable implements HasMedia
 {
-  use HasFactory, Notifiable, HasApiTokens;
+  use HasFactory, Notifiable, HasApiTokens, InteractsWithMedia;
+  public function registerMediaCollections(): void
+  {
+    $this->addMediaCollection('avatar')->singleFile();
+  }
   protected $fillable = [
     'name',
     'email',
@@ -58,5 +64,9 @@ class User extends Authenticatable
   protected $casts = [
     'email_verified_at' => 'datetime',
   ];
+
+  public function getAvatarAttribute(){
+    return $this->getFirstMediaUrl('avatar');
+  }
 
 }

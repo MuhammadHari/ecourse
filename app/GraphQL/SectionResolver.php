@@ -11,6 +11,12 @@ use Illuminate\Support\Arr;
 class SectionResolver
 {
 
+  function studentSection($builder){
+    $grade = auth()->user()->grade;
+    $classRoom = Classroom::whereGrade($grade)->first();
+    return $builder->whereClassroomId($classRoom->id);
+  }
+
   function updateBatch($_, array $args){
     $items = $args['map'];
     $classroom = Classroom::find($args['classroomId']);

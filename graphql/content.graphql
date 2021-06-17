@@ -12,6 +12,7 @@ type Content {
   type: ContentType!
   duration: Float!
   pageNumber: Float!
+  progress: Progress
   mediaContent: String!
   thumbnail: String!
   createdAt: Date!
@@ -42,4 +43,5 @@ extend type Query {
   ): [Content!]! @orderBy(column: "created_at", direction: DESC) @paginate
   contentByUser: [Content!]! @whereAuth(relation: "user") @paginate
   contentBySection(id: String! @where(key: "section_id")): [Content!]! @all
+  content(id: ID! @eq) : Content @find
 }

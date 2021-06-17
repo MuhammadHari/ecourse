@@ -43,13 +43,27 @@ class Progress extends Model
   public function content(){
     return $this->belongsTo(Content::class);
   }
+  public function section(){
+    return $this->belongsTo(Section::class);
+  }
+
+  public function user(){
+    return $this->belongsTo(User::class);
+  }
+
+  public function getPageNumberAttribute(){
+    $content = $this->content;
+    return $content->type === "pdf" ? $content->page_number : 0;
+  }
+  public function getDurationAttribute(){
+    $content = $this->content;
+    return $content->type === "video" ? $content->duration : 0;
+  }
+  public function getContentTypeAttribute(){
+    return $this->content->type;
+  }
 
   public function getStatusAttribute(){
-    $content = $this->content;
-    $n = $content->type === "pdf" ? $content->page_number : $content->duration;
-    if (! $n) {
-      return 0;
-    }
-    return round($n / $this->played,1);
+    return 0;
   }
 }

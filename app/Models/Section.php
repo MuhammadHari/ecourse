@@ -47,5 +47,26 @@ class Section extends Model
   public function getContentCountAttribute(){
     return $this->contents()->count();
   }
+  public function getPdfCountAttribute(){
+    return $this->contents()->whereType("pdf")->count();
+  }
+  public function getVideoCountAttribute(){
+    return $this->contents()->whereType("video")->count();
+  }
+  public function getProgressAttribute(){
+    if (! auth()->check()){
+      return 0;
+    }
+    $uid = auth()->id();
 
+    $total = Progress::whereSectionId($this->id)->whereUserId($uid)->count();
+
+    $completed = Progress::whereSectionId($this->id)
+      ->whereCompleted(true)
+      ->whereUserId($uid)->count();
+
+    if (!$completed) return 0;
+
+    return (int) (($completed / $total) * 100);
+  }
 }

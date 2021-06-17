@@ -128,4 +128,20 @@ class Content extends Model  implements HasMedia
   public function getDurationAttribute(){
     return ContentMetaData::getValue($this, "duration", 0);
   }
+  public function getProgressAttribute(){
+    $user=auth()->user();
+    if ($user && $user->role==="Student"){
+      $model = Progress::whereUserId($user->id)->whereContentId($this->id)->first();
+
+      if (! $model){
+        $model = Progress::create([
+          "user_id"=>$user->id,
+          "content_id"=>$this->id,
+          "section_id"=>$this->section_id
+        ]);
+      }
+      return $model;
+    }
+    return null;
+  }
 }

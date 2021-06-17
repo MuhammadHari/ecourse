@@ -4,12 +4,17 @@ type Progress {
   content_id: String!
   status: Float!
   content: Content!
+  section: Section!
   played: Float!
+  pageNumber: Float!
+  duration: Float!
+  contentType: ContentType!
+  completed: Boolean!
   created_at: DateTime!
   updated_at: DateTime
 }
 
-type SectionProgress{
+type SectionProgress {
   section_id: ID
   progress: Float
 }
@@ -20,12 +25,21 @@ type StudentClassroom {
   classroomId: String
   classroom: ClassRoom
   user: User
-  sectionProgress: [SectionProgress!]! @method(name: "getSectionProgressAttribute")
+  sectionProgress: [SectionProgress!]!
+    @method(name: "getSectionProgressAttribute")
+}
+
+extend type Mutation {
+  progressUpdate(id: ID! @eq, played: Int!): Progress! @update
+  progressCompletionMark(id: ID! @eq, completed: Boolean!): Progress! @update
 }
 
 extend type Query {
-  progress: [Progress] @all
+  allStudentProgress: [Progress!]! @whereAuth(relation: "user") @all
   studentClassroom(classroom_id: String): StudentClassroom
     @builder(method: "App\\GraphQL\\StudentClassroomResolver@builder")
     @first
+  studentProgress(section: ID @where(key: "section_id")): [Progress!]!
+    @whereAuth(relation: "user")
+    @all
 }

@@ -2,189 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7260d4e6-f965-4fef-bd75-78484cb0bc74" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/alias.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/ContentResolver.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/ProgressResolver.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/StudentClassroomResolver.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Discussion.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/DiscussionReply.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Progress.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Script/ContentMetaData.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Script/ContentStream.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Script/MediaUrlHelper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/DiscussionFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/DiscussionReplyFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphql/discussion.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphql/progress.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/class-pic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/quiz-pic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/media-library/temp/1LcmOskvw9yXNqPQgtDr1MrQsBdKMXBa/OTxRKSJbqml8np0ecxwvnxaWZzBxiJqx.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/media-library/temp/7y0KWSyGFdoOdvDMWrSKCOChJ9jzunjh/SdVJHTtHU7fwzrfPUIrzkEdCTO27ajza.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/media-library/temp/7yMvvLUiOHWaev8VhPpH2U39aiZha5mW/AxpXacEd9t7rXtgTYsxWmTAptLXLFWGx.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/media-library/temp/B17g5XIJi0r62S1DdH7BatSD0YY83QHM/n1VRa18TM7OtnB1ruamWIMl25RL3GPWQ.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/media-library/temp/BWocRDO2sZ81zTsrNfvsc86ubg7NIDdg/CBp4mdR5MDUSKnLKdxjTBDEDHNWPq978.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/media-library/temp/GU9h7aGI7Ovu8JtAxJnUEh7dDo19bX3j/xRiKaRGgw3Ye8BQpRCg5NEMnahfOWUup.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/media-library/temp/K0AZbTUcUuio3azKJe0rx99ZA5mG31Cy/mlMsLYnTnb9koOU9eYOUgeraRrx0ek9P.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/media-library/temp/KbMfADwmMEUs9DKV5JiRaQsth96xRM5I/h6YAIeFdRAGI4E9C6KhWzK8zGrnq8e61.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/media-library/temp/LFhiHLRplkOWLmEtOyh2xRi3Omz83yY1/bMvfc8Gq9zmC0GwHOGVpLgOyF86wqFIQ.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/media-library/temp/NJaVxQKeh0SKruDkpEphFruJ3EYHQKmR/4jrzyQUMyoiI9jxY7ID39ibdqdODrYXM.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/media-library/temp/Nu5fN0NwzFRLyJ3ZNqahMq9r9aSA4YMj/uDMcHUZVcmRhyzw0HW8wz7PJ9VbfYnun.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/media-library/temp/OV3M1EM7xQHHh9IjQFXgFWE2ef0Su9aX/j8BeDDLTto2eGxZ5ltTYR659qu7dxlQP.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/media-library/temp/r6CxzMy1dyD55awkChcJIKZsXJcLZQaY/1EUF5UkLqFC8OT26gxajHagPjTboGlQd.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/media-library/temp/vUFpixJsuqjUZ1eLvjgPuJpiIWxUnvzK/10QdnTYezjRngMcygP8nDC9N9Pl6V9ni.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ecourse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecourse.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/UserResolver.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Validators/AuthUpdateValidator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/Development.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Development.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/AuthResolver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/AuthResolver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/ClassRoomResolver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/ClassRoomResolver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Classroom.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Classroom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/SectionResolver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/SectionResolver.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Content.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Progress.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Progress.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Section.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Section.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ContentFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ContentFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/SectionFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/SectionFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_17_164415_section_migrator.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_17_164415_section_migrator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_17_164416_video_migrator.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_17_164416_video_migrator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_17_164859_discussion_migrator.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_17_164859_discussion_migrator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_17_165834_discussion_reply_migrator.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_17_165834_discussion_reply_migrator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_18_043357_course_progress_migrator.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_18_043357_course_progress_migrator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/auth.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/auth.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/classroom.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/classroom.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/content.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/content.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/progress.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/progress.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/schema.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/section.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/section.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js.LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.extends.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.extends.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/app.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/application.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/components/classroom-page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/components/content-card.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/components/draft-js-viewer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/components/form-fields/file-upload-field.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/components/form-fields/form-field.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/components/form-fields/form-helper.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/components/form-fields/grade-field.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/components/form-fields/photo-field.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/components/form-fields/select-field.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/components/form-fields/text-editor-field.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/components/form-fields/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/components/form-fields/video-field.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/components/player.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/hooks/use-aspect-ratio-box.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/hooks/use-breakpoint.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/hooks/use-fetch-query.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/hooks/use-navigate.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/hooks/use-node-dimension.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/hooks/use-node-ref.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/hooks/use-paginator.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/hooks/use-regex-keydown.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/hooks/use-responsive-cycles.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/hooks/use-success-modal.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/hooks/use-switch-value.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/hooks/use-toggle.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/hooks/use-upload-file.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout/Header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout/Navigator.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout/Paperbase.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout/account-navigator.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout/layout-provider.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout/navigator/admin.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout/navigator/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout/navigator/list-renderer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout/navigator/student.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout/navigator/teacher.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout/styles.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout/teacher-nav.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/loader.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/ClassRoomModel.base.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/ClassRoomModel.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/ContentModel.base.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/ContentModel.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/ContentPaginatorModel.base.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/ContentPaginatorModel.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/ContentTypeEnum.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/GradeEnum.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/ModelBase.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/PageInfoModel.base.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/PageInfoModel.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/PaginatorInfoModel.base.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/PaginatorInfoModel.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/RoleEnum.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/RootStore.base.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/RootStore.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/SectionModel.base.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/SectionModel.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/SortOrderEnum.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/TrashedEnum.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/UserModel.base.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/UserModel.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/UserPaginatorModel.base.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/UserPaginatorModel.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/models/reactUtils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/classroom-card.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/list.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/show/content/content.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/show/content/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/show/content/item-switcher.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/show/content/media-player.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/show/content/provider.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/show/general.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/show/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/show/navigator.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/show/provider.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/show/show.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/show/student.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/classroom/show/type.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/routes.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/shared/user-data-table.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/shared/user-form.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/student.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/admin/teacher.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/guest/home/home.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/guest/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/guest/login/sign-in.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/guest/register/sign-up.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/guest/routes.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/guest/shared/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/student/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/student/student-page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/teacher/classroom/classroom-card.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/teacher/classroom/classroom-form.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/teacher/classroom/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/teacher/classroom/list.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/teacher/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/teacher/routes.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/teacher/section/create.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/teacher/section/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/teacher/section/list.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/teacher/section/section-batch-updater.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/teacher/section/type.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/teacher/section/update.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/providers/app-provider.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/services/auth.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/services/classroom.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/services/sections.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/services/user.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/utils/grade-tranform.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/utils/mutation-service-factory.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/utils/transform-gql-key.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -459,19 +292,19 @@
       <command value="artisan serve" />
       <command value="artisan env" />
       <command value="artisan make:model Progress" />
-      <command value="artisan migrate:fresh" />
       <command value="artisan view:clear" />
-      <command value="artisan dev" />
       <command value="artisan route:clear" />
       <command value="artisan make:controller ContentStream" />
       <command value="artisan route:list" />
       <command value="artisan config:cache" />
       <command value="artisan config:clear" />
       <command value="artisan route:cache" />
-      <command value="artisan make:model StudentClassroom --migration" />
       <command value="artisan migrate" />
       <command value="artisan ide-helper:models -W" />
       <command value="artisan lighthouse:validate-schema" />
+      <command value="artisan make:model StudentClassroom --migration" />
+      <command value="artisan migrate:fresh" />
+      <command value="artisan dev" />
     </option>
   </component>
   <component name="RunManager" selected="npm.ui-dev">
@@ -614,6 +447,17 @@
       <workItem from="1622986254175" duration="2190000" />
       <workItem from="1622989902941" duration="3462000" />
       <workItem from="1623001249127" duration="865000" />
+      <workItem from="1623002672962" duration="276000" />
+      <workItem from="1623176370321" duration="2139000" />
+      <workItem from="1623265322424" duration="3170000" />
+      <workItem from="1623273165997" duration="63000" />
+      <workItem from="1623280298400" duration="5476000" />
+      <workItem from="1623289520244" duration="1024000" />
+      <workItem from="1623297554735" duration="363000" />
+      <workItem from="1623921585168" duration="1882000" />
+      <workItem from="1623929264597" duration="598000" />
+      <workItem from="1623930997224" duration="11331000" />
+      <workItem from="1623968829656" duration="4907000" />
     </task>
     <servers />
   </component>

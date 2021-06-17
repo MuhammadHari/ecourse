@@ -50,6 +50,7 @@ type User {
   grade: String
   created_at: DateTime!
   updated_at: DateTime!
+  avatar: String!
 }
 
 extend type Mutation {

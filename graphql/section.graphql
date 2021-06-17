@@ -5,8 +5,11 @@ type Section {
   title: String!
   contents: [Content!]! @orderBy(column: "title", direction: ASC)
   contentCount: Int!
+  videoCount: Int!
+  pdfCount: Int!
   createdAt: Date!
   updatedAt: Date
+  progress:Int!
 }
 extend type Mutation {
   sections(
@@ -20,6 +23,7 @@ extend type Mutation {
 }
 extend type Query {
   sections: [Section!]! @all
+  sectionByStudentClassroom: [Section!] @all @builder(method : "App\\GraphQL\\SectionResolver@studentSection")
   sectionByClassroom(
     id: ID!
       @rules(apply: ["exists:classrooms,id"])
