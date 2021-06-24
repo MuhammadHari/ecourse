@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7260d4e6-f965-4fef-bd75-78484cb0bc74" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/UserResolver.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Validators/AuthUpdateValidator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/blade.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-idea.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ecourse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecourse.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Development.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Development.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/SectionResolver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/SectionResolver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Content.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Progress.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Progress.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Section.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Section.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/auth.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/auth.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/content.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/content.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/progress.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/progress.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/section.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/section.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +49,7 @@
     <bower-package value="" />
     <bower.json value="" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.0">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.0 (project level)">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
@@ -235,6 +227,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -305,6 +298,10 @@
       <command value="artisan make:model StudentClassroom --migration" />
       <command value="artisan migrate:fresh" />
       <command value="artisan dev" />
+      <command value="artisan make:test UploadContent" />
+      <command value="artisan test" />
+      <command value="artisan make:test RegisterStudent" />
+      <command value="artisan make:test RegisterTeacherTest" />
     </option>
   </component>
   <component name="RunManager" selected="npm.ui-dev">
@@ -458,6 +455,9 @@
       <workItem from="1623929264597" duration="598000" />
       <workItem from="1623930997224" duration="11331000" />
       <workItem from="1623968829656" duration="4907000" />
+      <workItem from="1624060703322" duration="216000" />
+      <workItem from="1624511784422" duration="1140000" />
+      <workItem from="1624514089108" duration="2341000" />
     </task>
     <servers />
   </component>
